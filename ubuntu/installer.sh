@@ -64,7 +64,7 @@ if [ ! -d "$HOME/dbt-env" ]; then
 	deactivate
 fi
 
-echo ">>>> Instalando Apache Spark e pacote delta-spark..."
+echo ">>>> Instalando Apache Spark, Jupyter e pacote delta-spark..."
 sudo apt install scala
 curl https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz --output spark-3.5.5-bin-hadoop3.tgz
 tar xzf spark-3.5.5-bin-hadoop3.tgz
@@ -76,13 +76,16 @@ echo "|  Setando variáveis de ambiente"
 echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
 echo "export PATH=$SPARK_HOME/bin:$PATH" >> ~/.bashrc
 echo "export PYSPARK_PYTHON=$(which python)" >> ~/.bashrc
+echo "export PYSPARK_DRIVER_PYTHON=\"jupyter\"" >> ~/.bashrc
+echo "export PYSPARK_DRIVER_PYTHON_OPTS=\"notebook\"" >> ~/.bashrc
+
 source ~/.bashrc
 
 if [ ! -d "$HOME/spark-env" ]; then
 	echo "|  Criando e configurando virtualenv (venv): spark-env"
 	python -m venv ~/spark-env
 	source ~/spark-env/bin/activate
-	pip install pyspark delta-spark
+	pip install pyspark delta-spark jupyter findspark
 	echo "|  Verificando instalação do PySpark e desativando venv"
 	pyspark --version
 	deactivate

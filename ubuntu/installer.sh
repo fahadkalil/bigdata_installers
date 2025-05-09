@@ -74,7 +74,7 @@ echo "|  Verificando instalação do Apache Spark"
 
 echo "|  Setando variáveis de ambiente"
 echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
-#echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.bashrc
+echo "export PATH=$SPARK_HOME/bin:$PATH" >> ~/.bashrc
 echo "export PYSPARK_PYTHON=$(which python)" >> ~/.bashrc
 source ~/.bashrc
 

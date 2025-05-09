@@ -68,7 +68,7 @@ echo ">>>> Instalando Apache Spark e pacote delta-spark..."
 sudo apt install scala
 curl https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz --output spark-3.5.5-bin-hadoop3.tgz
 tar xzf spark-3.5.5-bin-hadoop3.tgz
-sudo mv spark-3.5.5-bin-hadoop3.tgz /opt/spark
+sudo mv spark-3.5.5-bin-hadoop3 /opt/spark
 echo "|  Verificando instalação do Apache Spark"
 /opt/spark/bin/spark-shell --version
 

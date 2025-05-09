@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 clear
 conda deactivate &> /dev/null

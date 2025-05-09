@@ -6,7 +6,7 @@ clear
 echo ">>>> INSTALANDO SOFTWARES PARA AULAS DE BIG DATA"
 
 echo ">>>> Atualizando apt update"
-sudo apt install -y curl wget
+sudo apt install -y curl wget git
 
 echo ">>>> Instalando Java OpenJDK..."
 sudo apt install openjdk-17-jdk -y &> /dev/null
@@ -65,6 +65,19 @@ if [ ! -d "$HOME/dbt-env" ]; then
 fi
 
 echo ">>>> Instalando Apache Spark e pacote delta-spark..."
+sudo apt install scala
+curl https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz --output spark-3.5.5-bin-hadoop3.tgz
+tar xzf spark-3.5.5-bin-hadoop3.tgz
+sudo mv spark-3.5.5-bin-hadoop3.tgz /opt/spark
+echo "|  Verificando instalação do Apache Spark"
+/opt/spark/bin/spark-shell --version
+
+echo "|  Setando variáveis de ambiente"
+echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
+echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.bashrc
+echo "export PYSPARK_PYTHON=$(which python)" >> ~/.bashrc
+source ~/.bashrc
+
 if [ ! -d "$HOME/spark-env" ]; then
 	echo "|  Criando e configurando virtualenv (venv): spark-env"
 	python -m venv ~/spark-env

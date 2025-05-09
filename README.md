@@ -1,8 +1,8 @@
 # bigdata_installers
 
-Usage:
+Uso:
 
 **[MacOS 15]**
-> Open a zsh terminal and run the command:
+> Abrir um terminal (shell) do zsh e executar o comando:
 
     zsh -c -y "$(curl -fsSL https://raw.githubusercontent.com/fahadkalil/bigdata_installers/refs/heads/main/macos/installer.sh)"

@@ -8,6 +8,10 @@ Abrir um terminal (shell) do zsh e executar o comando:
 
     zsh -c "$(curl -fsSL https://raw.githubusercontent.com/fahadkalil/bigdata_installers/refs/heads/main/macos/installer.sh)"
 
+Complemento -> Apache Spark
+
+    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/fahadkalil/bigdata_installers/refs/heads/main/macos/spark_installer.sh)"
+
 ---
 
 <img src="https://skillicons.dev/icons?i=ubuntu" />

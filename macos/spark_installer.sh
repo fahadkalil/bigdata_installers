@@ -25,7 +25,7 @@ if [ -d "$HOME/spark-env" ]; then
 	echo "|  Baixando pacotes para Jupyter Notebook"
 	python3 -m venv ~/spark-env
 	source ~/spark-env/bin/activate
-	python -m pip install notebook findspark
+	python -m pip install jupyterlab findspark
 	deactivate
 fi
 bar__status_changed 3 $TOTAL_TASKS

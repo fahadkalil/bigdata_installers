@@ -8,6 +8,7 @@ eval "$(curl -sLo- "https://git.io/progressbarposix")"
 TOTAL_TASKS=3
 bar__start
 
+echo " ## Correção do Owner do banco de dados postgres para o usuário postgres ##"
 psql -U atitus -d postgres -c "ALTER DATABASE postgres OWNER TO postgres;" &> /dev/null
 
 echo ">>>> Instalando linguagem Scala..."

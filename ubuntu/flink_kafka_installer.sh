@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# Script para Ubuntu Linux para definição de ambiente com Apache Flink e Kafka
+clear
 echo "### CRIANDO AMBIENTE COM APACHE FLINK E APACHE KAFKA ###"
 
 echo ">>>> Instalando Python 3.11 (compatibilidade) + curl/wget"
